@@ -8,13 +8,16 @@ PUID
 
 You can also add python dependancies that are not included with default flexget with $pythonExtras environmental variable. For example
 
-Run ```docker run -d \ 
-		  --name=flexget
-          -e PUID="1200" \
-	      -e pythonExtras="transmissionrpc python-telegram-bot"  \
-	      -v /some/path:/config \
-	      -v /some_other/downloads \
-	      subzero79/docker-flexget```
+to run 
+```
+docker run -d \ 
+  --name=flexget
+  -e PUID="1200" \
+  -e pythonExtras="transmissionrpc python-telegram-bot"  \
+  -v /some/path:/config \
+  -v /some_other/downloads \
+  subzero79/docker-flexget
+```
 
 
 Notes, make sure map properly paths in the config.yml as are seen inside the container, otherwise Flexget will check those paths and will not start if they do not exist.
