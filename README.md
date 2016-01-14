@@ -11,7 +11,7 @@ You can also add python dependancies that are not included with default flexget 
 to run 
 ```
 docker run -d \ 
-  --name=flexget
+  --name=flexget \
   -e PUID="1200" \
   -e pythonExtras="transmissionrpc python-telegram-bot"  \
   -v /some/path:/config \
