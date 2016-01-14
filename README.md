@@ -20,12 +20,12 @@ docker run -d \
 ```
 
 
-Notes, make sure map properly paths in the config.yml as are seen inside the container, otherwise Flexget will check those paths and will not start if they do not exist.
+Make sure to map properly paths in the config.yml as are seen inside the container, Flexget will check those paths and will not start if they do not exist.
 
 Logs are in /some/path/logs in host or /config/logs inside the container
 
 You can check them also with ```docker logs flexget```
 
-If you need to enter the container to install something, ```docker exec -it flexget sh```
+If you need to enter the container to install some other python dependancy, ```docker exec -it flexget sh```
 
 
