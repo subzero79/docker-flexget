@@ -26,4 +26,6 @@ Logs are in /some/path/logs in host or /config/logs inside the container
 
 You can check them also with ```docker logs flexget```
 
+If you need to enter the container ```docker exec -it flexget sh```
+
 
