@@ -1,13 +1,15 @@
 FROM frolvlad/alpine-python2:latest
 MAINTAINER subzero79
 
+ENV DAEMON_USERNAME="flexget" DAEMON_NAME="Flexget" TERM=xterm 
+
 RUN pip install flexget
 
 ADD src/ /root/
 
 RUN apk add --update supervisor nano && \
 	cp /root/supervisord.conf /etc/ && \
-	adduser flexget -D
+	adduser ${DAEMON_USERNAME} -D
 
 RUN rm -rf /root/.cache
 
