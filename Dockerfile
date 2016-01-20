@@ -7,7 +7,7 @@ RUN pip install flexget
 
 ADD src/ /root/
 
-RUN apk add --update supervisor nano && \
+RUN apk add --update supervisor nano ca-certificates && \
 	cp /root/supervisord.conf /etc/ && \
 	adduser ${DAEMON_USERNAME} -D
 
