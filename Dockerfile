@@ -3,15 +3,17 @@ MAINTAINER subzero79
 
 ENV DAEMON_USERNAME="flexget" DAEMON_NAME="Flexget" TERM=xterm 
 
-RUN pip install flexget
 
 ADD src/ /root/
 
-RUN apk add --update supervisor nano ca-certificates && \
+RUN apk add --update gcc supervisor nano ca-certificates python-dev musl-dev && \
 	cp /root/supervisord.conf /etc/ && \
 	adduser ${DAEMON_USERNAME} -D
 
-RUN rm -rf /root/.cache
+RUN pip install --upgrade pip && pip install flexget
+
+
+RUN apk del gcc musl-dev && rm -rf /root/.cache
 
 VOLUME /config
 
