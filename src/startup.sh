@@ -41,7 +41,7 @@ if [ "$VERSION" = "You are on the latest release."  ]; then
   echo "Flexget up to date..."
 else
   echo "Upgrading Flexget..."
-  pip install flexget --upgrade
+  pip install --upgrade flexget
 fi
 
 chown ${DAEMON_USERNAME} -Rv /config

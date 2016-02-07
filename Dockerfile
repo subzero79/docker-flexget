@@ -13,7 +13,7 @@ RUN apk add --update gcc supervisor nano ca-certificates python-dev musl-dev && 
 RUN pip install --upgrade pip && pip install flexget
 
 
-RUN apk del gcc musl-dev && rm -rf /root/.cache
+RUN rm -rf /root/.cache
 
 VOLUME /config
 
